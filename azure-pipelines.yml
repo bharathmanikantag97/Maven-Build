@@ -5,11 +5,10 @@ pool:
   name: Default   # self-hosted agent
 
 steps:
-- task: JavaToolInstaller@0
-  inputs:
-    versionSpec: '11'
-    jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'AdoptOpenJDK'   # <-- FIX IS HERE
+- script: |
+    java -version
+    echo JAVA_HOME=%JAVA_HOME%
+  displayName: 'Verify Java'
 
 - task: Maven@3
   inputs:
@@ -17,4 +16,4 @@ steps:
     mavenOptions: '-Xmx3072m'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+    goals: 'clean package'
