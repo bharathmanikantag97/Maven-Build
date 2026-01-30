@@ -3,7 +3,6 @@ trigger:
 
 pool:
   name: Default      # <-- this is your self-hosted agent pool
-  # remove 'vmImage' completely
 
 steps:
 - task: Maven@3
