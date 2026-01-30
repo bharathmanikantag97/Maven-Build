@@ -9,7 +9,7 @@ steps:
   inputs:
     versionSpec: '11'
     jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'PreInstalled'
+    jdkSourceOption: 'AdoptOpenJDK'   # <-- FIX IS HERE
 
 - task: Maven@3
   inputs:
